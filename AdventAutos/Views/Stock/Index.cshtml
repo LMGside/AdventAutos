@@ -1,0 +1,57 @@
+﻿@model AdventModels.ResponseFields.StockPage
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="pagetitle">
+    <h1>Index</h1>
+</div>
+
+<p>
+    <a asp-page="/Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ProductName
+            </th>
+            <th>
+                Description
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                ProductCategory
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StockResponses)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCategory)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

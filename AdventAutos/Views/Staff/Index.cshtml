@@ -1,0 +1,50 @@
+﻿@model AdventModels.ResponseFields.StaffPage
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Staff List</h1>
+
+<p>
+    <a asp-page="/Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                EmployeeName
+            </th>
+            <th>
+                EmployeeSurname
+            </th>
+            <th>
+                Role
+            </th>
+            <th>
+                Username
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.StaffResponses)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeSurname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
